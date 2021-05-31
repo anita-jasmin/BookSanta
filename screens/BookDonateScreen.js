@@ -34,7 +34,13 @@ export default class BookDonateScreen extends Component {
           <ListItem.Title>{item.book_name}</ListItem.Title>
           <ListItem.Subtitle>{item.reason_to_request}</ListItem.Subtitle>
         </ListItem.Content>
-        <ListItem.Chevron />
+        <ListItem.Chevron
+          onPress={() => {
+            this.props.navigation.navigate("ReceiverDetailsScreen", {
+              details: item,
+            });
+          }}
+        />
       </ListItem>
     );
   };
